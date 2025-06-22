@@ -1,15 +1,17 @@
-class Cell{
+export class Cell{
     constructor(pos, piece){
         this.pos= pos;
         this.piece = piece;
     }
 }
+
 //returns array of range 1 to n
 const range = (n) =>{
     return Array.from({length: n}, (_, i)=> i+1);
 };
+
 export const createBoard = (fenString)=> {
-   const fen = fenString.split('')[0]; //get the first portion of string
+   const fen = fenString.split(' ')[0]; //get the first portion of string
    const fenPieces = fen.split('/').join(''); //convert FEN into one long continuous string
    let pieces = Array.from(fenPieces);
    //save individual pieces for each of 64 cells
@@ -39,6 +41,8 @@ export const createBoard = (fenString)=> {
     }
     return board;
 };
+
 console.log(
     createBoard('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1')
 );
+

@@ -8,6 +8,13 @@
     height: calc(100vh * 0.85);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    background-color: burlywood;
+    background-color: #ffedd9;
+    .light {
+  background-color: #f0d9b5; /* light beige */
 }
-    
+
+.dark {
+  background-color: #b58863; /* brown */
+}
+
+}
