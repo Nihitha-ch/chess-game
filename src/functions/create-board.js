@@ -11,7 +11,7 @@ const range = (n) =>{
 };
 
 export const createBoard = (fenString)=> {
-   const fen = fenString.split(' ')[0]; //get the first portion of string
+   const fen = fenString.split('  ')[0]; //get the first portion of string
    const fenPieces = fen.split('/').join(''); //convert FEN into one long continuous string
    let pieces = Array.from(fenPieces);
    //save individual pieces for each of 64 cells
