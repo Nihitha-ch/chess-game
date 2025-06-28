@@ -2,9 +2,9 @@ import React, { createContext, useReducer } from 'react';
 import GameReducer from './GameReducer';
 
 const initialState = {
-    from: '',
-	to: '',
 	possibleMoves: [],
+    turn: 'w', 
+    check: false,
     
 };
 

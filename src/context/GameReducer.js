@@ -19,6 +19,8 @@ const GameReducer = (state, action) => {
                 ...state,
                 possibleMoves: [],
             };
+        case types.SET_TURN:
+            return { ...state, turn: action.player, check: action.check };
         default:
             return state;
     }

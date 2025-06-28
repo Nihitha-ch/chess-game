@@ -27,3 +27,12 @@
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     opacity: 0.85;
 }
+.check {
+    background-image: linear-gradient(
+        to right,
+        #e73f5e 0%,
+        #cc3654 19%,
+        #c7151e 60%,
+        #dd3737 100%
+    );
+}

@@ -14,7 +14,13 @@ const Game = ()=> {
     useEffect(()=> {
         setBoard(createBoard(fen));
     },[fen]);
-    
+    useEffect(() => {
+    dispatch({
+        type: types.SET_TURN, //import types from '../../context/actions'
+        player: chess.turn(),
+        check: chess.in_check(),
+    });
+}, [fen, dispatch, chess]);
     const fromPos = useRef();
 
     const makeMove = (pos) => {

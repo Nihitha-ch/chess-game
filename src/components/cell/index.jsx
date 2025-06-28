@@ -7,8 +7,14 @@ import './cell-styles.css';
 
 const Cell = ({ cell, index,  makeMove, setFromPos  }) => {
     const light = isLightSquare(cell.pos, index);
-     const { possibleMoves } = useContext(GameContext);
+     const { possibleMoves, turn, check } = useContext(GameContext);
     const isPossibleMove = possibleMoves.includes(cell.pos);
+    const color = cell.piece.toUpperCase() === cell.piece ? 'w' : 'b';
+
+    const inCheck = () => {
+        const king = cell.piece.toUpperCase() === 'K';
+        return turn === color && king && check;
+    };
     const handleDrop = () => {
         makeMove(cell.pos);
     };
@@ -18,7 +24,9 @@ const Cell = ({ cell, index,  makeMove, setFromPos  }) => {
             onDrop={handleDrop}
             onDragOver={(e) => e.preventDefault()}
         >
-            <div className={`overlay ${isPossibleMove && 'possible-move'}`}>
+            <div 
+               className={`overlay ${isPossibleMove && 'possible-move'} $ {inCheck() && 'check' }`}
+            >
                 <Piece pos={cell.pos} name={cell.piece} setFromPos={setFromPos} />
             </div>
         </div>
