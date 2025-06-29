@@ -4,6 +4,7 @@ import {createBoard} from '../../functions';
 import Board from '../../components/board';
 import { GameContext } from '../../context/GameContext';
 import { types } from '../../context/actions';
+import getGameOverState from '../../functions/game-over.js';
 
 const FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 const Game = ()=> {
@@ -11,10 +12,16 @@ const Game = ()=> {
     const {current: chess}= useRef (new Chess(fen));
     const [board, setBoard] = useState(createBoard(fen));
     const { dispatch } = useContext(GameContext);
+    
     useEffect(()=> {
         setBoard(createBoard(fen));
     },[fen]);
     useEffect(() => {
+      const [gameOver, status] = getGameOverState(chess);
+        if (gameOver) {
+            dispatch({ type: types.GAME_OVER, status, player: chess.turn() });
+            return;
+        }
     dispatch({
         type: types.SET_TURN, //import types from '../../context/actions'
         player: chess.turn(),

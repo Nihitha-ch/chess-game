@@ -5,7 +5,8 @@ const initialState = {
 	possibleMoves: [],
     turn: 'w', 
     check: false,
-    
+    gameOver: false,
+    status: '', 
 };
 
 export const GameContext = createContext(initialState);
