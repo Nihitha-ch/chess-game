@@ -29,7 +29,7 @@ const Piece = ({ name, pos, setFromPos }) => {
         <img
             className="piece"
             src={image}
-            alt=" "
+            alt=""
             draggable={true}
             ref={element}
             onDragStart={handleDragStart}
