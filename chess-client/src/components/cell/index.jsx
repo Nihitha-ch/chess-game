@@ -7,7 +7,7 @@ import './cell-styles.css';
 
 const Cell = ({ cell, index,  makeMove, setFromPos  }) => {
     const light = isLightSquare(cell.pos, index);
-     const { possibleMoves, turn, check } = useContext(GameContext);
+    const { possibleMoves, turn, check } = useContext(GameContext);
     const isPossibleMove = possibleMoves.includes(cell.pos);
     const color = cell.piece.toUpperCase() === cell.piece ? 'w' : 'b';
 
