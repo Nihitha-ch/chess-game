@@ -41,7 +41,7 @@ const removePlayer = (playerID) => {
     for (const game in games) {
         let players = games[game];
         const index = players.findIndex((pl) => pl.playerID === playerID);
-
+        console.log({ players, index });
         if (index !== -1) {
             return players.splice(index, 1)[0];
         }
