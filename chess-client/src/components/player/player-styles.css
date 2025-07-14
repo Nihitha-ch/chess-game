@@ -1,0 +1,35 @@
+.player {
+    margin: 1.5rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    color: rgb(56, 55, 55);
+    border-radius: 2.5rem;
+    position: absolute;
+    z-index: 2;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.you {
+    box-shadow: 0 0 20px 7px rgb(219, 219, 154);
+    background-color: #fffdfd;
+    top: 2.5rem;
+    left: 1.2rem;
+}
+
+.opponent {
+    background-color: rgb(255, 254, 247);
+    top: 2.5rem;
+    right: 1.2rem;
+    box-shadow: 0 0 20px 7px rgb(219, 219, 154);
+}
+
+.king {
+    width: 48px;
+    height: 48px;
+}

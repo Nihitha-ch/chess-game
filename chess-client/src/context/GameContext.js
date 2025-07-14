@@ -7,6 +7,11 @@ const initialState = {
     check: false,
     gameOver: false,
     status: '', 
+    playerName: '',
+    playerColor: '',
+    opponentName: '',
+    message: '',
+    opponentMoves: [],
 };
 
 export const GameContext = createContext(initialState);

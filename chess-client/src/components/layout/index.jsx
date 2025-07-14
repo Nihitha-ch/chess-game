@@ -4,7 +4,7 @@ import './layout-styles.css';
 const Layout = ({ Image, Content }) => {
     return (
         <div className="container">
-            <div className="app-title">Stack Chess</div>
+            <div className="app-title">ChessMate</div>
             <div className="flex">
                 <Image />
                 <div className="content">
